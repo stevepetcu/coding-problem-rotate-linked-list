@@ -18,9 +18,11 @@ class ListUtilsTest {
         return Stream.of(
                 arguments(new LinkedList<Integer>(List.of()), 2, new LinkedList<Integer>(List.of()), "Rotating an empty list returns the empty list."),
                 arguments(new LinkedList<>(Arrays.asList(1, 2, 3)), -1, new LinkedList<>(Arrays.asList(1, 2, 3)), "Rotating a list by a negative place ordinal returns the list."),
-                arguments(new LinkedList<>(Arrays.asList(1, 2, 3)), 0, new LinkedList<>(Arrays.asList(1, 2, 3)), "Rotating a list by 0 places returns the list.")
-//                arguments(new LinkedList<>(Arrays.asList(7, 7, 3, 5)), 2, new LinkedList<>(Arrays.asList(3, 5, 7, 7)), "Rotating the list by 2 places."),
-//                arguments(new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5)), 3, new LinkedList<>(Arrays.asList(3, 4, 5, 1, 2)), "Rotating the list by 3 places.")
+                arguments(new LinkedList<>(Arrays.asList('a', 'b')), 1, new LinkedList<>(Arrays.asList('b', 'a')), "Rotating a list works with data types other than Integer."),
+                arguments(new LinkedList<>(Arrays.asList(1, 2, 3)), 0, new LinkedList<>(Arrays.asList(1, 2, 3)), "Rotating a list by 0 places returns the list."),
+                arguments(new LinkedList<>(Arrays.asList(1, 2, 3, 4)), 5, new LinkedList<>(Arrays.asList(4, 1, 2, 3)), "Rotating a list by a number of places greater than the list size will rotate the list multiple times."),
+                arguments(new LinkedList<>(Arrays.asList(7, 7, 3, 5)), 2, new LinkedList<>(Arrays.asList(3, 5, 7, 7)), "Rotating the list by 2 places."),
+                arguments(new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5)), 3, new LinkedList<>(Arrays.asList(3, 4, 5, 1, 2)), "Rotating the list by 3 places.")
         );
     }
 
